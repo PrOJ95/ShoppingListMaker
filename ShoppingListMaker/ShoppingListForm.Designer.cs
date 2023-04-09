@@ -1,6 +1,6 @@
 ﻿namespace ShoppingListMaker
 {
-    partial class Form1
+    partial class ShoppingListForm
     {
         /// <summary>
         ///  Required designer variable.

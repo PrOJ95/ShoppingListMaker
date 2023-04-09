@@ -1,15 +1,20 @@
 ﻿namespace ShoppingListMaker
 {
-    public partial class Form1 : Form
+    public partial class ShoppingListForm : Form
     {
-        public Form1()
+        public ShoppingListForm()
         {
             InitializeComponent();
             removeButton.Enabled = false;
+            shoppingListView.Columns.Add("Name");
+            shoppingListView.Columns.Add("Price");
+            shoppingListView.Columns.Add("Quantity");
+            shoppingListView.Columns.Add("Weight");
         }
         private List<Item> shoppingList = new List<Item>();
         decimal totalPrice = 0;
         decimal totalWeight = 0;
+
         private void addButton_Click(object sender, EventArgs e)
         {
             decimal price;
@@ -38,11 +43,6 @@
         private void UpdateList()
         {
             shoppingListView.View = View.Details;
-            shoppingListView.Columns.Add("Name");
-            shoppingListView.Columns.Add("Price");
-            shoppingListView.Columns.Add("Quantity");
-            shoppingListView.Columns.Add("Weight");
-
             shoppingListView.Items.Clear();
 
             foreach (Item item in shoppingList)
